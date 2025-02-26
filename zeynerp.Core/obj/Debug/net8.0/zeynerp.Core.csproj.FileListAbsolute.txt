@@ -1,0 +1,12 @@
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\bin\Debug\net8.0\zeynerp.Core.deps.json
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\bin\Debug\net8.0\zeynerp.Core.dll
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\bin\Debug\net8.0\zeynerp.Core.pdb
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\zeynerp.Core.csproj.AssemblyReference.cache
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\zeynerp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\zeynerp.Core.AssemblyInfoInputs.cache
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\zeynerp.Core.AssemblyInfo.cs
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\zeynerp.Core.csproj.CoreCompileInputs.cache
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\zeynerp.Core.dll
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\refint\zeynerp.Core.dll
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\zeynerp.Core.pdb
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\ref\zeynerp.Core.dll
