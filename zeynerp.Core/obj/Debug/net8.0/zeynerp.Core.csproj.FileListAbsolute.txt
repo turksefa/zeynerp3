@@ -10,3 +10,4 @@ C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\zeynerp.Core.dll
 C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\refint\zeynerp.Core.dll
 C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\zeynerp.Core.pdb
 C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\ref\zeynerp.Core.dll
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Core\obj\Debug\net8.0\zeynerp.Core.sourcelink.json

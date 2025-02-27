@@ -13,3 +13,4 @@ C:\Users\IT\Desktop\zeynerp\src\zeynerp.Application\obj\Debug\net8.0\zeynerp.App
 C:\Users\IT\Desktop\zeynerp\src\zeynerp.Application\obj\Debug\net8.0\refint\zeynerp.Application.dll
 C:\Users\IT\Desktop\zeynerp\src\zeynerp.Application\obj\Debug\net8.0\zeynerp.Application.pdb
 C:\Users\IT\Desktop\zeynerp\src\zeynerp.Application\obj\Debug\net8.0\ref\zeynerp.Application.dll
+C:\Users\IT\Desktop\zeynerp\src\zeynerp.Application\obj\Debug\net8.0\zeynerp.Application.sourcelink.json

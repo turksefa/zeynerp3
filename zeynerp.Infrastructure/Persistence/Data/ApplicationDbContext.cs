@@ -12,5 +12,6 @@ namespace zeynerp.Infrastructure.Persistence.Data
         }
 
         public DbSet<Company> Companies { get; set; }
+        public DbSet<Invitation> Invitations { get; set; }
     }
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "e0KMBMz0ka1x+/eJWGe8TKsue21/IHDghPubcCZzd+Tui0zC4MEgaPiTDrcPX6nkApxhvECJffLk2B2jFST38w==",
+  "dgSpecHash": "+Oi4r6LC7ufLhZq5cDVq1B17lenodYt/4Zc0hO4VwUlpqQLmgvNnizwqh0pQYIZp2bXQ+VCYwu2Pu5XbqRvpbw==",
   "success": true,
   "projectFilePath": "C:\\Users\\IT\\Desktop\\zeynerp\\src\\zeynerp.Application\\zeynerp.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\IT\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.0\\microsoft.aspnetcore.cryptography.internal.8.0.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.0\\microsoft.aspnetcore.cryptography.keyderivation.8.0.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.0\\microsoft.aspnetcore.identity.ui.8.0.0.nupkg.sha512",

@@ -1,5 +1,5 @@
 using zeynerp.Core.Domain.Entities;
-using zeynerp.Core.Repositories;
+using zeynerp.Core.Interfaces.Repositories;
 using zeynerp.Infrastructure.Persistence.Data;
 using zeynerp.Infrastructure.Persistence.Repositories.Base;
 

@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using zeynerp.Core.Domain.Entities.Base;
-using zeynerp.Core.Repositories.Base;
+using zeynerp.Core.Interfaces.Repositories.Base;
 using zeynerp.Infrastructure.Persistence.Data;
 
 namespace zeynerp.Infrastructure.Persistence.Repositories.Base
 {
-    public class Repository<T> : IRepository<T> where T : BaseEntity
+    public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly ApplicationDbContext _context;
+        protected readonly ApplicationDbContext _context;
         private readonly DbSet<T> _dbSet;
 
         public Repository(ApplicationDbContext context)
@@ -28,14 +28,12 @@ namespace zeynerp.Infrastructure.Persistence.Repositories.Base
             return entity;
         }
 
-        public Task DeleteAsync(T entity)
+        public void Delete(T entity)
         {
             throw new NotImplementedException();
         }        
 
-        public Task UpdateAsync(T entity)
-        {
-            throw new NotImplementedException();
-        }
+        public void Update(T entity) =>
+            _context.Entry(entity).State = EntityState.Modified;
     }
 }
