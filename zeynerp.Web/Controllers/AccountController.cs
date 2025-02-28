@@ -32,7 +32,7 @@ namespace zeynerp.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterDto registerDto)
+        public async Task<IActionResult> Register([FromForm]RegisterDto registerDto)
         {
             if(ModelState.IsValid)
             {
@@ -77,15 +77,47 @@ namespace zeynerp.Web.Controllers
             return View(registerDto);
         }
 
-        public IActionResult Login()
+        public IActionResult Login([FromQuery]string? returnUrl)
         {
+            ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
         [HttpPost]
-        public IActionResult Login(LoginDto loginDto)
+        public async Task<IActionResult> Login([FromForm]LoginDto loginDto, string? returnUrl)
         {
+            returnUrl = returnUrl ?? Url.Content("~/Dashboard/Index");
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByEmailAsync(loginDto.Email);
+                if (user == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Kullanıcı bulunamadı.");
+                    return View();
+                }
+
+                if (!user.EmailConfirmed)
+                {
+                    ModelState.AddModelError(string.Empty, "Hesabınızı doğrulamadınız. Lütfen e-posta adresinizi kontrol edin.");
+                    return View();
+                }
+
+                var result = await _signInManager.PasswordSignInAsync(loginDto.Email, loginDto.Password, false, false);
+
+                if (result.Succeeded)
+                {
+                    return Redirect(returnUrl);
+                }
+
+                ModelState.AddModelError(string.Empty, "Geçersiz kullanıcı adı veya şifre.");
+            }
             return View();
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login");
         }
     }
 }

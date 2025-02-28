@@ -10,7 +10,8 @@ using zeynerp.Core.Interfaces.Repositories;
 using zeynerp.Infrastructure.Persistence;
 using zeynerp.Infrastructure.Persistence.Data;
 using zeynerp.Infrastructure.Persistence.Repositories;
-using zeynerp.Infrastructure.Services;
+using zeynerp.Infrastructure.Services.Email;
+using zeynerp.Infrastructure.Services.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
+    .AddDefaultTokenProviders().AddErrorDescriber<CustomIdentityErrorDescriber>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 

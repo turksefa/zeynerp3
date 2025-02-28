@@ -1,0 +1,170 @@
+@model ApplicationUser
+@{
+    ViewData["LayoutTitle"] = "Kullanıcılar";
+}
+
+<header class="page-header">
+    <h2>@ViewData["LayoutTitle"]</h2>
+    <div class="right-wrapper text-end">
+        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+    </div>
+</header>
+
+<div class="row">
+    <div class="col">
+        <div class="card card-modern">
+            <div class="card-body">
+                <div class="datatables-header-footer-wrapper">
+                    <div class="datatable-header">
+                        <div class="row align-items-center mb-3">
+                            <div class="col-12 col-lg-auto mb-3 mb-lg-0">
+                                <a href="#modalForm"
+                                    class="modal-with-form btn btn-primary btn-md font-weight-semibold btn-py-2 px-4">+
+                                    Kullanıcı
+                                    Davet</a>
+
+                                <!-- Modal Form -->
+                                <div id="modalForm" class="modal-block modal-block-primary mfp-hide">
+                                    <section class="card">
+                                        <form id="form" asp-action="SendInvitation" method="post">
+                                            <input type="hidden" name="companyId" value="@Model.CompanyId" />
+                                            <div class="card-body">
+                                                <div class="form-group py-3">
+                                                    <div class="input-group">
+                                                        <div class="form-floating">
+                                                            <input type="email" name="email" class="form-control form-control-md"
+                                                                id="floatingInputGroupEmail" placeholder="E-Posta"
+                                                                required>
+                                                            <label for="floatingInputGroupEmail">E-Posta</label>
+                                                        </div>
+                                                        <span class="input-group-text"><i
+                                                                class="bx bx-envelope text-4"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <footer class="card-footer">
+                                                <div class="row">
+                                                    <div class="col-md-12 text-end">
+                                                        <button type="submit" class="btn btn-primary">Gönder</button>
+                                                        <button class="btn btn-default modal-dismiss">İptal</button>
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                        </form>
+                                    </section>
+                                </div>
+                            </div>
+                            @* <div class="col-8 col-lg-auto ms-auto ml-auto mb-3 mb-lg-0">
+                                <div class="d-flex align-items-lg-center flex-column flex-lg-row">
+                                    <label class="ws-nowrap me-3 mb-0">Filter By:</label>
+                                    <select class="form-control select-style-1 filter-by" name="filter-by">
+                                        <option value="all" selected>All</option>
+                                        <option value="1">ID</option>
+                                        <option value="2">Name</option>
+                                        <option value="3">Phone</option>
+                                        <option value="4">E-mail</option>
+                                        <option value="5">Orders</option>
+                                        <option value="6">Total Amount</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-4 col-lg-auto ps-lg-1 mb-3 mb-lg-0">
+                                <div class="d-flex align-items-lg-center flex-column flex-lg-row">
+                                    <label class="ws-nowrap me-3 mb-0">Show:</label>
+                                    <select class="form-control select-style-1 results-per-page"
+                                        name="results-per-page">
+                                        <option value="12" selected>12</option>
+                                        <option value="24">24</option>
+                                        <option value="36">36</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </div>
+                            </div> *@
+                            <div class="col-12 col-lg-auto ms-auto ml-auto mb-3 mb-lg-0">
+                                <div class="search search-style-1 search-style-1-lg mx-lg-auto">
+                                    <div class="input-group">
+                                        <input type="text" class="search-term form-control" name="search-term"
+                                            id="search-term" placeholder="Kullanıcı Ara">
+                                        <button class="btn btn-default" type="submit"><i
+                                                class="bx bx-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="table table-ecommerce-simple table-striped mb-0" id="datatable-ecommerce-list"
+                        style="min-width: 750px;">
+
+                        <thead>
+                            <tr>
+                                <th width="18%">Name</th>
+                                <th width="18%">E-mail</th>
+                                <th width="52%">Yetkiler</th>
+                                <th width="12%">Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#"><strong>John Doe</strong></a></td>
+                                <td>okler@domain.com</td>
+                                <td><span class="badge rounded-pill text-bg-primary">Stok Yönetimi</span><span
+                                        class="badge rounded-pill text-bg-danger ms-1">Tedarik Yönetimi</span></td>
+                                <td><span class="ecommerce-status completed"></span></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#"><strong>John Doe</strong></a></td>
+                                <td>okler@domain.com</td>
+                                <td><span class="badge rounded-pill text-bg-success">Personel Yönetimi</span></td>
+                                <td><span class="ecommerce-status on-hold">Davetiye Gönderildi</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr class="solid mt-5 opacity-4">
+                    <div class="datatable-footer">
+                        <div class="row align-items-center justify-content-between mt-3">
+                            <div class="col-md-auto order-1 mb-3 mb-lg-0">
+                                @* <div class="d-flex align-items-stretch">
+                                    <div class="d-grid gap-3 d-md-flex justify-content-md-end me-4">
+                                        <select class="form-control select-style-1 bulk-action" name="bulk-action"
+                                            style="min-width: 170px;">
+                                            <option value="" selected>Bulk Actions</option>
+                                            <option value="delete">Delete</option>
+                                        </select>
+                                        <a href="#"
+                                            class="bulk-action-apply btn btn-light btn-px-4 py-3 border font-weight-semibold text-color-dark text-3">Apply</a>
+                                    </div>
+
+                                </div> *@
+                            </div>
+                            <div class="col-lg-auto text-center order-3 order-lg-2">
+                                <div class="results-info-wrapper"></div>
+                            </div>
+                            <div class="col-lg-auto order-2 order-lg-3 mb-3 mb-lg-0">
+                                <div class="pagination-wrapper"></div>
+                            </div>
+                        </div>
+                    </div>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section VendorStyles {
+    <link rel="stylesheet" href="~/vendor/datatables/media/css/dataTables.bootstrap5.css" />
+}
+
+@section VendorScripts {
+    <script src="~/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="~/vendor/datatables/media/js/dataTables.bootstrap5.min.js"></script>
+    <script src="~/vendor/jquery-validation/jquery.validate.js"></script>
+    <script src="~/vendor/jquery-validation/localization/messages_tr.min.js"></script>
+}
+
+@section Scripts {
+    <script src="~/js/examples/examples.ecommerce.datatables.list.js"></script>
+    <script src="~/js/examples/examples.modals.js"></script>
+    <script src="~/js/examples/examples.validation.js"></script>
+}

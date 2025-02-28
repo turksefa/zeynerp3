@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="~/vendor/boxicons/css/boxicons.min.css" />
 	<link rel="stylesheet" href="~/vendor/magnific-popup/magnific-popup.css" />
 	<link rel="stylesheet" href="~/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+	@RenderSection("VendorStyles", required: false)
 
 	<!-- Theme CSS -->
 	<link rel="stylesheet" href="~/css/theme.css" />
@@ -282,7 +283,7 @@
 										class="bx bx-lock"></i> Lock Screen</a>
 							</li>
 							<li>
-								<a role="menuitem" tabindex="-1" href="pages-signin.html"><i
+								<a role="menuitem" tabindex="-1" asp-action="Logout" asp-controller="Account"><i
 										class="bx bx-power-off"></i> Logout</a>
 							</li>
 						</ul>
@@ -356,6 +357,18 @@
 											</a>
 										</li>
 									</ul>
+								</li>
+								<li>
+									<a class="nav-link" asp-controller="User" asp-action="Index">
+										<i class="bx bx-package" aria-hidden="true"></i>
+										<span>Ürünler</span>
+									</a>
+								</li>
+								<li>
+									<a class="nav-link" asp-controller="User" asp-action="Index">
+										<i class="bx bx-user" aria-hidden="true"></i>
+										<span>Kullanıcılar</span>
+									</a>
 								</li>
 							</ul>
 						</nav>
@@ -467,6 +480,7 @@
 	<script src="~/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 
 	<!-- Specific Page Vendor -->
+	@RenderSection("VendorScripts", required: false)
 
 	<!-- Theme Base, Components and Settings -->
 	<script src="~/js/theme.js"></script>
@@ -478,6 +492,7 @@
 	<script src="~/js/theme.init.js"></script>
 
 	<!-- Examples -->
+	@RenderSection("Scripts", required: false)
 </body>
 
 </html>

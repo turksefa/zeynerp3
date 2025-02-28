@@ -14,8 +14,5 @@ namespace zeynerp.Infrastructure.Persistence.Repositories
 
         public async Task<Invitation?> GetByEmailAndCompanyAsync(string email, Guid companyId) =>
             await _context.Invitations.FirstOrDefaultAsync(i => i.Email == email && i.CompanyId == companyId);
-
-        public async Task<Invitation?> GetByTokenAsync(Guid token) =>
-            await _context.Invitations.FirstOrDefaultAsync(i => i.Token == token);
     }
 }
